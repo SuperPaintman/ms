@@ -4,4 +4,8 @@ version: 0.1.0
 authors:
   - SuperPaintman <SuperPaintmanDeveloper@gmail.com>
 
+description: |
+  Library to easily convert various time formats to milliseconds and
+  milliseconds to human readable format.
+
 license: MIT
