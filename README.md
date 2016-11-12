@@ -94,12 +94,19 @@ crystal spec
 
 --------------------------------------------------------------------------------
 
+## Changelog
+[Changelog][changelog-url]
+
+
+--------------------------------------------------------------------------------
+
 ## License
 
 [MIT][license-url]
 
 
 [license-url]: LICENSE
+[changelog-url]: CHANGELOG.md
 [travis-image]: https://img.shields.io/travis/SuperPaintman/ms/master.svg?label=linux
 [travis-url]: https://travis-ci.org/SuperPaintman/ms
 
