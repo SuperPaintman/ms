@@ -50,9 +50,9 @@ private def parse_str(str : String) : Int64
 end
 
 private def fmt_short(ms : Int64) : String
-  {% for type, constant in { y: "Y", d: "D", h: "H", m: "M", s: "S"} %}
-    if ms >= {{constant.id}}
-      return (ms / {{constant.id}}).round.to_i64.to_s + "{{type}}"
+  {% for time_unit, ms_constant in { y: "Y", d: "D", h: "H", m: "M", s: "S"} %}
+    if ms >= {{ms_constant.id}}
+      return (ms / {{ms_constant.id}}).round.to_i64.to_s + "{{time_unit}}"
     end
   {% end %}
 
@@ -60,12 +60,12 @@ private def fmt_short(ms : Int64) : String
 end
 
 private def fmt_long(ms : Int64) : String
-  {% for type, constant in { year: "Y", day: "D", hour: "H", minute: "M", second: "S"} %}
-    if ms >= {{constant.id}}
-      if ms < {{constant.id}} * 1.5
-        return (ms / {{constant.id}}).floor.to_i64.to_s + " {{type}}"
+  {% for time_unit, ms_constant in { year: "Y", day: "D", hour: "H", minute: "M", second: "S"} %}
+    if ms >= {{ms_constant.id}}
+      if ms < {{ms_constant.id}} * 1.5
+        return (ms / {{ms_constant.id}}).floor.to_i64.to_s + " {{time_unit}}"
       else
-        return (ms / {{constant.id}}).ceil.to_i64.to_s + " {{type}}s"
+        return (ms / {{ms_constant.id}}).ceil.to_i64.to_s + " {{time_unit}}s"
       end
     end
   {% end %}
