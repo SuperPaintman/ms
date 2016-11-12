@@ -1,5 +1,8 @@
 # ms
 
+[![Linux Build][travis-image]][travis-url]
+
+
 Library to easily convert various time formats to milliseconds and
 milliseconds to human readable format.
 
@@ -69,3 +72,6 @@ crystal spec
 
 
 [license-url]: LICENSE
+[travis-image]: https://img.shields.io/travis/SuperPaintman/ms/master.svg?label=linux
+[travis-url]: https://travis-ci.org/SuperPaintman/ms
+
