@@ -12,7 +12,7 @@ private REGEXP_STR = /^((?:\d+)?\.?\d+)?[\ \t]*(milliseconds?|msecs?|ms|seconds?
 private def parse_str(str : String) : Int64
   res = REGEXP_STR.match(str)
 
-  if res.nil?
+  if res.nil? || (res[1]?.nil? && res[2]?.nil?)
     raise "Invalid time format"
   end
 
