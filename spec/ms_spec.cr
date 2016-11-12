@@ -76,6 +76,58 @@ describe MS do
     end
   end
 
+  # Long Strings
+  describe "ms(long string)" do
+    it "should not throw an error" do
+      begin
+        MS.ms("53 milliseconds")
+      rescue err
+        err.should be_nil
+      end
+    end
+
+    it "should convert \"milliseconds\", \"millisecond\", \"msecs\", \"msec\", \"ms\" to ms" do
+      ["milliseconds", "millisecond", "msecs", "msec", "ms"].each do |type|
+        MS.ms("53 #{type}").should eq 53
+      end
+    end
+
+    it "should convert \"seconds\", \"second\", \"secs\", \"sec\", \"s\" to ms" do
+      ["seconds", "second", "secs", "sec", "s"].each do |type|
+        MS.ms("1 #{type}").should eq 1000
+      end
+    end
+
+    it "should convert from \"minutes\", \"minute\", \"mins\", \"min\", \"m\" to ms" do
+      ["minutes", "minute", "mins", "min", "m"].each do |type|
+        MS.ms("1 #{type}").should eq 60000
+      end
+    end
+
+    it "should convert from \"hours\", \"hour\", \"hrs\", \"hr\", \"h\" to ms" do
+      ["hours", "hour", "hrs", "hr", "h"].each do |type|
+        MS.ms("1 #{type}").should eq 3600000
+      end
+    end
+
+    it "should convert \"days\", \"day\", \"d\" to ms" do
+      ["days", "day", "d"].each do |type|
+        MS.ms("2 #{type}").should eq 172800000
+      end
+    end
+
+
+    it "should convert \"years\", \"year\", \"yrs\", \"yr\", \"y\" to ms" do
+      ["years", "year", "yrs", "yr", "y"].each do |type|
+        MS.ms("2 #{type}").should eq 63115200000
+      end
+    end
+
+    it "should work with decimals" do
+      MS.ms("1.5 hours").should eq 5400000
+    end
+  end
+
   # Int32 | Int64
   describe ".ms(Int32 | Int64)" do
     it "should not raise an error" do
