@@ -15,6 +15,8 @@ dependencies:
 ```
 
 
+--------------------------------------------------------------------------------
+
 ## Usage
 
 ```crystal
@@ -31,12 +33,17 @@ six_hours = MS.ms(60 * 60 * 1000 * 6)
 # => "6h"
 ```
 
+
+--------------------------------------------------------------------------------
+
 ## Test
 
 ```sh
 crystal spec
 ```
 
+
+--------------------------------------------------------------------------------
 
 ## Contributing
 
@@ -45,6 +52,9 @@ crystal spec
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
+
+
+--------------------------------------------------------------------------------
 
 ## Contributors
 
