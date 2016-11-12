@@ -79,10 +79,10 @@ crystal spec
 
 ## Contributing
 
-1. Fork it ( https://github.com/SuperPaintman/ms/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
+1. Fork it (<https://github.com/SuperPaintman/ms/fork>)
+2. Create your feature branch (`git checkout -b feature/<feature_name>`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin feature/<feature_name>`)
 5. Create a new Pull Request
 
 
