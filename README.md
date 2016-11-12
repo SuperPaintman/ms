@@ -44,10 +44,10 @@ ms_in_2_years = MS.ms("2y")
 
 # === Numbers to strings ===
 two_ms = MS.ms(200)
-# => 200ms
+# => "200ms"
 
 five_sec = MS.ms(5000)
-# => 5s
+# => "5s"
 
 six_hours = MS.ms(60 * 60 * 1000 * 6)
 # => "6h"
