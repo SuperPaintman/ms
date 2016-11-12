@@ -1,6 +1,7 @@
 # ms
 
 [![Linux Build][travis-image]][travis-url]
+[![Shards version][shards-image]][shards-url]
 
 
 Library to easily convert various time formats to milliseconds and
@@ -109,4 +110,6 @@ crystal spec
 [changelog-url]: CHANGELOG.md
 [travis-image]: https://img.shields.io/travis/SuperPaintman/ms/master.svg?label=linux
 [travis-url]: https://travis-ci.org/SuperPaintman/ms
+[shards-image]: https://img.shields.io/github/tag/superpaintman/ms.svg?label=shards
+[shards-url]: https://github.com/superpaintman/ms
 
