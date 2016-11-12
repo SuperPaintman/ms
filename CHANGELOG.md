@@ -1,3 +1,10 @@
+# 0.1.1
+
+- [**Added**] description into `shard.yml`
+
+
+--------------------------------------------------------------------------------
+
 # 0.1.0
 
 - [**Added**] `MS.ms(String) : Int64` static method for convert string values
