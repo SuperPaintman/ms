@@ -183,4 +183,55 @@ describe MS do
       MS.ms(575675089).should eq "6d"
     end
   end
+
+  # Int32 | Int64, long: true
+  describe ".ms(Int32 | Int64, long: true)" do
+    it "should not raise an error" do
+      begin
+        MS.ms(500, long: true)
+      rescue err
+        err.should be_nil
+      end
+    end
+
+    it "should support milliseconds" do
+      MS.ms(100, long: true).should eq "100 ms"
+      MS.ms(500, long: true).should eq "500 ms"
+      MS.ms(900, long: true).should eq "900 ms"
+    end
+
+    it "should support seconds" do
+      MS.ms(1000 * 1, long: true).should eq "1 second"
+      MS.ms((1000 * 1.2).round.to_i64, long: true).should eq "1 second"
+      MS.ms(1000 * 10, long: true).should eq "10 seconds"
+    end
+
+    it "should support minutes" do
+      MS.ms(60 * 1000 * 1, long: true).should eq "1 minute"
+      MS.ms((60 * 1000 * 1.2).round.to_i64, long: true).should eq "1 minute"
+      MS.ms(60 * 1000 * 10, long: true).should eq "10 minutes"
+    end
+
+    it "should support hours" do
+      MS.ms(60 * 60 * 1000 * 1, long: true).should eq "1 hour"
+      MS.ms((60 * 60 * 1000 * 1.2).round.to_i64, long: true).should eq "1 hour"
+      MS.ms(60 * 60 * 1000 * 10, long: true).should eq "10 hours"
+    end
+
+    it "should support days" do
+      MS.ms(24 * 60 * 60 * 1000 * 1, long: true).should eq "1 day"
+      MS.ms((24 * 60 * 60 * 1000 * 1.2).round.to_i64, long: true).should eq "1 day"
+      MS.ms(24 * 60 * 60 * 1000 * 10, long: true).should eq "10 days"
+    end
+
+    it "should support years" do
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 1).round.to_i64, long: true).should eq "1 year"
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 1.2).round.to_i64, long: true).should eq "1 year"
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 10).round.to_i64, long: true).should eq "10 years"
+    end
+
+    it "should round" do
+      MS.ms(575675089, long: true).should eq "6 days"
+    end
+  end
 end

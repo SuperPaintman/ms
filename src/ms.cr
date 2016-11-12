@@ -73,12 +73,60 @@ private def fmt_short(ms : Int64) : String
   ms.to_i64.to_s + "ms"
 end
 
+private def fmt_long(ms : Int64) : String
+  if ms >= Y
+    if ms < Y * 1.5
+      return (ms / Y).floor.to_i64.to_s + " year"
+    else
+      return (ms / Y).ceil.to_i64.to_s + " years"
+    end
+  end
+
+  if ms >= D
+    if ms < D * 1.5
+      return (ms / D).floor.to_i64.to_s + " day"
+    else
+      return (ms / D).ceil.to_i64.to_s + " days"
+    end
+  end
+
+  if ms >= H
+    if ms < H * 1.5
+      return (ms / H).floor.to_i64.to_s + " hour"
+    else
+      return (ms / H).ceil.to_i64.to_s + " hours"
+    end
+  end
+
+  if ms >= M
+    if ms < M * 1.5
+      return (ms / M).floor.to_i64.to_s + " minute"
+    else
+      return (ms / M).ceil.to_i64.to_s + " minutes"
+    end
+  end
+
+  if ms >= S
+    if ms < S * 1.5
+      return (ms / S).floor.to_i64.to_s + " second"
+    else
+      return (ms / S).ceil.to_i64.to_s + " seconds"
+    end
+  end
+
+  ms.to_i64.to_s + " ms"
+end
+
 module MS
   def self.ms(val : String) : Int64
     parse_str(val)
   end
 
-  def self.ms(val : Int32 | Int64) : String
-    fmt_short(val.to_i64)
+  def self.ms(val : Int32 | Int64, long = false) : String
+    if long
+      fmt_long(val.to_i64)
+    else
+      fmt_short(val.to_i64)
+    end
   end
 end

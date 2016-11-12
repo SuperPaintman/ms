@@ -51,6 +51,17 @@ five_sec = MS.ms(5000)
 
 six_hours = MS.ms(60 * 60 * 1000 * 6)
 # => "6h"
+
+
+# === Numbers to long strings ===
+two_long_ms = MS.ms(200, long: true)
+# => "200 ms"
+
+five_long_sec = MS.ms(1000, long: true)
+# => "1 second"
+
+six_long_hours = MS.ms(60 * 60 * 1000 * 6, long: true)
+# => "6 hours"
 ```
 
 
