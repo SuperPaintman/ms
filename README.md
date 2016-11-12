@@ -25,6 +25,20 @@ dependencies:
 ```crystal
 require "ms"
 
+# == Strings to numbers ===
+ms_in_5h = MS.ms("5h")
+# => 18000000
+
+ms_in_20sec = MS.ms("20 sec")
+# => 20000
+
+ms_in_an_hour_and_a_half = MS.ms("1.5 hours")
+# => 5400000
+
+ms_in_day = MS.ms("day")
+# => 86400000
+
+
 # === Numbers to strings ===
 two_ms = MS.ms(200)
 # => 200ms
