@@ -25,13 +25,13 @@ private def parse_str(str : String) : Int64
   n = n.as(Float64)
 
   begin
-    type = res.try(&.[2])
-    type = type.to_s.downcase
+    time_unit = res.try(&.[2])
+    time_unit = time_unit.to_s.downcase
   rescue err
-    type = "ms"
+    time_unit = "ms"
   end
 
-  case type
+  case time_unit
     when "years", "year", "yrs", "yr", "y"
       return (n * Y).round.to_i64
     when "days", "day", "d"
@@ -45,7 +45,7 @@ private def parse_str(str : String) : Int64
     when "milliseconds", "millisecond", "msecs", "msec", "ms"
       return (n).round.to_i64
     else
-      raise "Unknown type: \"#{type}\""
+      raise "Unknown time unit: \"#{time_unit}\""
   end
 end
 
