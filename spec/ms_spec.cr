@@ -234,4 +234,70 @@ describe MS do
       MS.ms(575675089, long: true).should eq "6 days"
     end
   end
+
+  # Invalid vals
+  describe ".ms(Invalid vals)" do
+    it "should raise an error, when MS.ms(\"\")" do
+      begin
+        MS.ms("")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+
+    it "should raise an error, when MS.ms(\"  \")" do
+      begin
+        MS.ms("  ")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+
+    it "should raise an error, when MS.ms(\"\\t\")" do
+      begin
+        MS.ms("\t")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+
+    it "should raise an error, when MS.ms(\"\\t \")" do
+      begin
+        MS.ms("\t  ")
+        MS.ms("  \t  ")
+        MS.ms("\t    \t ")
+        MS.ms("\t    \t")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+
+    it "should raise an error, when MS.ms(\"10 waffles\")" do
+      begin
+        MS.ms("10 waffles")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+
+    it "should raise an error, when MS.ms(\"waffles\")" do
+      begin
+        MS.ms("10 waffles")
+      rescue err
+        err.message.should eq "Invalid time format"
+      else
+        raise "should raise an error"
+      end
+    end
+  end
 end
