@@ -59,3 +59,13 @@ crystal spec
 ## Contributors
 
 - [SuperPaintman](https://github.com/SuperPaintman) SuperPaintman - creator, maintainer
+
+
+--------------------------------------------------------------------------------
+
+## License
+
+[MIT][license-url]
+
+
+[license-url]: LICENSE
