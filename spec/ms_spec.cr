@@ -77,8 +77,8 @@ describe MS do
   end
 
   # Long Strings
-  describe "ms(long string)" do
-    it "should not throw an error" do
+  describe ".ms(String) # long" do
+    it "should not raise an error" do
       begin
         MS.ms("53 milliseconds")
       rescue err
