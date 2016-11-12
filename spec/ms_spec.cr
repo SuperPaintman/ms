@@ -19,6 +19,10 @@ describe MS do
       MS.ms("day").should eq 86400000
     end
 
+    it "should convert \"s\" to ms" do
+      MS.ms("1s").should eq 1000
+    end
+
     it "should convert from \"m\" to ms" do
       MS.ms("1m").should eq 60000
     end
@@ -31,8 +35,8 @@ describe MS do
       MS.ms("2d").should eq 172800000
     end
 
-    it "should convert \"s\" to ms" do
-      MS.ms("1s").should eq 1000
+    it "should convert \"y\" to ms" do
+      MS.ms("1y").should eq 31557600000
     end
 
     it "should convert \"ms\" to ms" do
@@ -72,8 +76,8 @@ describe MS do
     end
   end
 
-  # Int32
-  describe ".ms(Int32)" do
+  # Int32 | Int64
+  describe ".ms(Int32 | Int64)" do
     it "should not raise an error" do
       begin
         MS.ms(100)
@@ -114,6 +118,13 @@ describe MS do
       MS.ms(24 * 60 * 60 * 1000 * 5).should eq "5d"
       MS.ms(24 * 60 * 60 * 1000 * 10).should eq "10d"
       MS.ms(24 * 60 * 60 * 1000 * 23).should eq "23d"
+    end
+
+    it "should support years" do
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 1).round.to_i64).should eq "1y"
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 5).round.to_i64).should eq "5y"
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 10).round.to_i64).should eq "10y"
+      MS.ms((365.25 * 24 * 60 * 60 * 1000 * 23).round.to_i64).should eq "23y"
     end
 
     it "should round" do

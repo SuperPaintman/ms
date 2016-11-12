@@ -38,6 +38,9 @@ ms_in_an_hour_and_a_half = MS.ms("1.5 hours")
 ms_in_day = MS.ms("day")
 # => 86400000
 
+ms_in_2_years = MS.ms("2y")
+# => 63115200000
+
 
 # === Numbers to strings ===
 two_ms = MS.ms(200)
