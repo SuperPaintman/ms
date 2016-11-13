@@ -120,10 +120,24 @@ end
 module MS
   extend self
 
+  # Convert string to an integer of the milliseconds.
+  #
+  # ```
+  # MS.ms("5h") # => 18000000
+  # ```
   def ms(val : String) : Int64
     parse_str(val)
   end
 
+  # Convert integer of the milliseconds to an formatted string.
+  #
+  # ```
+  # # Short format
+  # MS.ms(60 * 60 * 1000 * 6) # => "6h"
+  #
+  # # Long format
+  # MS.ms(1000, long: true) # => "1 second"
+  # ```
   def ms(val : Int32 | Int64, long = false) : String
     if long
       fmt_long(val.to_i64)
