@@ -66,6 +66,19 @@ six_long_hours = MS.ms(60 * 60 * 1000 * 6, long: true)
 ```
 
 
+or with including:
+
+```crystal
+require "ms"
+include MS
+
+ms_in_5h = ms("5h")
+# => 18000000
+
+# ...
+```
+
+
 --------------------------------------------------------------------------------
 
 ## Test

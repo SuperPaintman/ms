@@ -118,11 +118,13 @@ private def fmt_long(ms : Int64) : String
 end
 
 module MS
-  def self.ms(val : String) : Int64
+  extend self
+
+  def ms(val : String) : Int64
     parse_str(val)
   end
 
-  def self.ms(val : Int32 | Int64, long = false) : String
+  def ms(val : Int32 | Int64, long = false) : String
     if long
       fmt_long(val.to_i64)
     else
