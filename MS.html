@@ -63,12 +63,12 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/SuperPaintman/ms/blob/76397ebbad5f6986874596f35b7e7a0f575749e3/src/ms/version.cr#L1" target="_blank">ms/version.cr</a>
+      <a href="https://github.com/SuperPaintman/ms/blob/df8a2c57a85e340c5672f15f517f93a5497863ec/src/ms/version.cr#L1" target="_blank">ms/version.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/SuperPaintman/ms/blob/76397ebbad5f6986874596f35b7e7a0f575749e3/src/ms.cr#L120" target="_blank">ms.cr</a>
+      <a href="https://github.com/SuperPaintman/ms/blob/df8a2c57a85e340c5672f15f517f93a5497863ec/src/ms.cr#L120" target="_blank">ms.cr</a>
     
     <br/>
   
@@ -97,10 +97,14 @@
       <li class="entry-summary">
         <a href="#ms%28val%3AInt32%7CInt64%2Clong%3Dfalse%29%3AString-instance-method" class="signature"><strong>#ms</strong>(val : Int32 | Int64, long = <span class="n">false</span>) : String</a>
         
+          <div class="summary"><p>Convert integer of the milliseconds to an formatted string.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#ms%28val%3AString%29%3AInt64-instance-method" class="signature"><strong>#ms</strong>(val : String) : Int64</a>
+        
+          <div class="summary"><p>Convert string to an integer of the milliseconds.</p></div>
         
       </li>
     
@@ -127,10 +131,18 @@
         <a class="method-permalink" href="#ms%28val%3AInt32%7CInt64%2Clong%3Dfalse%29%3AString-instance-method">#</a>
       </div>
       
+        <div class="doc"><p>Convert integer of the milliseconds to an formatted string.</p>
+
+<pre><code><span class="c"># Short format</span>
+<span class="t">MS</span>.ms(<span class="n">60</span> <span class="o">*</span> <span class="n">60</span> <span class="o">*</span> <span class="n">1000</span> <span class="o">*</span> <span class="n">6</span>) <span class="c"># &#61;&gt; &quot;6h&quot;</span>
+
+<span class="c"># Long format</span>
+<span class="t">MS</span>.ms(<span class="n">1000</span>, long: <span class="n">true</span>) <span class="c"># &#61;&gt; &quot;1 second&quot;</span></code></pre></div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/SuperPaintman/ms/blob/76397ebbad5f6986874596f35b7e7a0f575749e3/src/ms.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/SuperPaintman/ms/blob/df8a2c57a85e340c5672f15f517f93a5497863ec/src/ms.cr#L141" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -143,10 +155,14 @@
         <a class="method-permalink" href="#ms%28val%3AString%29%3AInt64-instance-method">#</a>
       </div>
       
+        <div class="doc"><p>Convert string to an integer of the milliseconds.</p>
+
+<pre><code><span class="t">MS</span>.ms(<span class="s">&quot;5h&quot;</span>) <span class="c"># &#61;&gt; 18000000</span></code></pre></div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/SuperPaintman/ms/blob/76397ebbad5f6986874596f35b7e7a0f575749e3/src/ms.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/SuperPaintman/ms/blob/df8a2c57a85e340c5672f15f517f93a5497863ec/src/ms.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
