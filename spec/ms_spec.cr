@@ -116,7 +116,6 @@ describe MS do
       end
     end
 
-
     it "should convert \"years\", \"year\", \"yrs\", \"yr\", \"y\" to ms" do
       ["years", "year", "yrs", "yr", "y"].each do |time_unit|
         MS.ms("2 #{time_unit}").should eq 63115200000

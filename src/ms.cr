@@ -32,20 +32,20 @@ private def parse_str(str : String) : Int64
   end
 
   case time_unit
-    when "years", "year", "yrs", "yr", "y"
-      return (n * Y).round.to_i64
-    when "days", "day", "d"
-      return (n * D).round.to_i64
-    when "hours", "hour", "hrs", "hr", "h"
-      return (n * H).round.to_i64
-    when "minutes", "minute", "mins", "min", "m"
-      return (n * M).round.to_i64
-    when "seconds", "second", "secs", "sec", "s"
-      return (n * S).round.to_i64
-    when "milliseconds", "millisecond", "msecs", "msec", "ms"
-      return (n).round.to_i64
-    else
-      raise "Unknown time unit: \"#{time_unit}\""
+  when "years", "year", "yrs", "yr", "y"
+    return (n * Y).round.to_i64
+  when "days", "day", "d"
+    return (n * D).round.to_i64
+  when "hours", "hour", "hrs", "hr", "h"
+    return (n * H).round.to_i64
+  when "minutes", "minute", "mins", "min", "m"
+    return (n * M).round.to_i64
+  when "seconds", "second", "secs", "sec", "s"
+    return (n * S).round.to_i64
+  when "milliseconds", "millisecond", "msecs", "msec", "ms"
+    return (n).round.to_i64
+  else
+    raise "Unknown time unit: \"#{time_unit}\""
   end
 end
 
