@@ -95,6 +95,12 @@ crystal spec
 
 --------------------------------------------------------------------------------
 
+## API
+[Docs][docs-url]
+
+
+--------------------------------------------------------------------------------
+
 ## Changelog
 [Changelog][changelog-url]
 
@@ -108,6 +114,7 @@ crystal spec
 
 [license-url]: LICENSE
 [changelog-url]: CHANGELOG.md
+[docs-url]: https://superpaintman.github.io/ms/
 [travis-image]: https://img.shields.io/travis/SuperPaintman/ms/master.svg?label=linux
 [travis-url]: https://travis-ci.org/SuperPaintman/ms
 [shards-image]: https://img.shields.io/github/tag/superpaintman/ms.svg?label=shards
