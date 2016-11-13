@@ -88,6 +88,16 @@ five_long_sec <span class="o">=</span> <span class="t">MS</span>.ms(<span class=
 six_long_hours <span class="o">=</span> <span class="t">MS</span>.ms(<span class="n">60</span> <span class="o">*</span> <span class="n">60</span> <span class="o">*</span> <span class="n">1000</span> <span class="o">*</span> <span class="n">6</span>, long: <span class="n">true</span>)
 <span class="c"># &#61;&gt; &quot;6 hours&quot;</span></code></pre>
 
+<p>or with including:</p>
+
+<pre><code class='language-crystal'><span class="k">require</span> <span class="s">&quot;ms&quot;</span>
+<span class="k">include</span> <span class="t">MS</span>
+
+ms_in_5h <span class="o">=</span> ms(<span class="s">&quot;5h&quot;</span>)
+<span class="c"># &#61;&gt; 18000000</span>
+
+<span class="c"># ...</span></code></pre>
+
 <hr/><h2>Test</h2>
 
 <pre><code class='language-sh'>crystal spec</code></pre>
